@@ -18,6 +18,16 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class TempSer extends HttpServlet {
 
+    private String hola; 
+
+    public String getHola() {
+        return hola;
+    }
+
+    public void setHola(String hola) {
+        this.hola = hola;
+    }
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -73,11 +83,10 @@ public class TempSer extends HttpServlet {
         //processRequest(request, response);
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-               
-            
+
+            this.hola = "saludo";
             out.println("Hola desde web service");
-        
-        
+
         }
     }
 
