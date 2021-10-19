@@ -1,7 +1,7 @@
-const char* ssid     = "JARAMILLO2";
-const char* password = "71051635";
+const char* ssid     = "A70Jou";
+const char* password = "123joujou";
 const char* hostname = "ESP8266_1";
 
-IPAddress ip(192, 168, 1, 200);
-IPAddress gateway(192, 168, 1, 1);
+IPAddress ip(192, 168, 131, 196);
+IPAddress gateway(192, 168, 131, 165);
 IPAddress subnet(255, 255, 255, 0);

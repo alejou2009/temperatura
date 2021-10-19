@@ -6,16 +6,18 @@
 #include "API.hpp"
 #include "ESP8266_Utils.hpp"
 
+int i = 0;
+
 void setup() 
 {
-   Serial.begin(115200);
-  
-    ConnectWiFi_STA();
-   
-   GetAll();
-   Create("New item");
+  Serial.begin(115200);
+  ConnectWiFi_STA();
 }
 
 void loop() 
 {
+  ConnectWiFi_STA();
+  Create(i);
+  delay(5000);
+  i++;
 }
