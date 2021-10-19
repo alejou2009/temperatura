@@ -13,12 +13,7 @@ void setup()
     ConnectWiFi_STA();
    
    GetAll();
-   GetItem(1);
-   GetQuery("ABC");
    Create("New item");
-   ReplaceById(2, "New item");
-    UpdateById(2, "New item");
-   DeleteById(5);
 }
 
 void loop() 
