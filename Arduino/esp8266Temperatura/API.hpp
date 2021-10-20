@@ -1,4 +1,4 @@
-String ApiHost = "http://192.168.131.195:3000";
+String ApiHost = "http://172.20.10.7:3000";
 
 void processResponse(int httpCode, HTTPClient& http)
 {
@@ -24,7 +24,7 @@ void GetAll()
   processResponse(httpCode, http);
 }
 
-void Create(int newTemp)
+void Create(float newTemp)
 {
   HTTPClient http;
   http.begin(ApiHost + "/");
