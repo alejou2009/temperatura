@@ -6,18 +6,23 @@
 #include "API.hpp"
 #include "ESP8266_Utils.hpp"
 
-int i = 0;
+float vref = 3.3;
+float resolution = vref / 1023.0;
 
-void setup() 
+void setup()
 {
   Serial.begin(115200);
   ConnectWiFi_STA();
 }
 
-void loop() 
+void loop()
 {
+  float temperature = analogRead(A0);
+  temperature = (temperature * resolution);
+  temperature = temperature * 100;
+  Serial.print("La temperatura es: ");
+  Serial.println(temperature);
   ConnectWiFi_STA();
-  Create(i);
+  Create(temperature);
   delay(5000);
-  i++;
 }
