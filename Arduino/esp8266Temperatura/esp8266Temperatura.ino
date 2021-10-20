@@ -7,7 +7,7 @@
 #include "ESP8266_Utils.hpp"
 
 float vref = 3.3;
-float resolution = vref / 1023.0;
+float resolution = vref / 1023;
 
 void setup()
 {
@@ -19,7 +19,7 @@ void loop()
 {
   float temperature = analogRead(A0);
   temperature = (temperature * resolution);
-  temperature = temperature * 100;
+  temperature = (temperature * 100) - 6;
   Serial.print("La temperatura es: ");
   Serial.println(temperature);
   ConnectWiFi_STA();
