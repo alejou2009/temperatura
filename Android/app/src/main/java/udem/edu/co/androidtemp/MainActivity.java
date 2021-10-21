@@ -3,6 +3,7 @@ package udem.edu.co.androidtemp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void LeerRest(){
-        String url = "http://172.20.10.7:3000";
+        String url = "http://192.168.0.104:3000";
 
         StringRequest getRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Log.e("error",error.getMessage());
             }
         });
         Volley.newRequestQueue(this).add(getRequest);
